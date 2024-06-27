@@ -6,19 +6,17 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
   const photoPromise = uploadPhoto(fileName);
 
   return Promise.allSettled([userPromise, photoPromise])
-    .then((results) => 
-      results.map((result) => {
-        if (result.status === 'rejected') {
-          return {
-            status: result.status,
-            value: `Error: ${result.reason.message}`,
-          };
-        }
+    .then((results) => results.map((result) => {
+      if (result.status === 'rejected') {
         return {
           status: result.status,
-          value: result.value,
+          value: `Error: ${result.reason.message}`,
         };
-      })
-    )
+      }
+      return {
+        status: result.status,
+        value: result.value,
+      };
+    }))
     .catch(() => console.log('Signup system offline'));
 }
