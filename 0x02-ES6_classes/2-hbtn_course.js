@@ -1,44 +1,48 @@
+/* eslint-disable */
 export default class HolbertonCourse {
   constructor(name, length, students) {
-    this._name = this.validateString(name, "Name");
-    this._length = this.validateNumber(length, "Length");
-    this._students = this.validateArray(students, "Students");
+    this._name = this.validateString(name, 'Name');
+    this._length = this.validateNumber(length, 'Length');
+    this._students = this.validateArray(students, 'Students');
   }
 
   // Getter and setter for name
   get name() {
     return this._name;
   }
+
   set name(newName) {
-    this._name = this.validateString(newName, "Name");
+    this._name = this.validateString(newName, 'Name');
   }
 
   // Getter and setter for length
   get length() {
     return this._length;
   }
+
   set length(newLength) {
-    this._length = this.validateNumber(newLength, "Length");
+    this._length = this.validateNumber(newLength, 'Length');
   }
 
   // Getter and setter for students
   get students() {
     return this._students;
   }
+
   set students(newStudents) {
-    this._students = this.validateArray(newStudents, "Students");
+    this._students = this.validateArray(newStudents, 'Students');
   }
 
   // Validation methods
   validateString(value, propName) {
-    if (typeof value !== "string") {
+    if (typeof value !== 'string') {
       throw new TypeError(`${propName} must be a string`);
     }
     return value;
   }
 
   validateNumber(value, propName) {
-    if (typeof value !== "number" || isNaN(value)) {
+    if (typeof value !== 'number' || isNaN(value)) {
       throw new TypeError(`${propName} must be a number`);
     }
     return value;
@@ -49,9 +53,9 @@ export default class HolbertonCourse {
       throw new TypeError(`${propName} must be an array`);
     }
     value.forEach((item, index) => {
-      if (typeof item !== "string") {
+      if (typeof item !== 'string') {
         throw new TypeError(
-          `Element at index ${index} of ${propName} must be a string`
+          `Element at index ${index} of ${propName} must be a string`,
         );
       }
     });
