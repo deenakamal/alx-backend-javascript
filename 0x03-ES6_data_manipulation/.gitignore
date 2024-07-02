@@ -1,0 +1,24 @@
+# .gitignore
+
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Babel configuration
+babel.config.js
+
+# ESLint configuration
+.eslintrc.js
+
+# Package files
+package.json
+package-lock.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
