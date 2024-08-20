@@ -1,0 +1,13 @@
+# Ignore package.json
+package.json
+
+# Ignore babel config file
+babel.config.js
+
+# Ignore ESLint configuration file
+.eslintrc.js
+
+# Optionally, ignore other files or directories
+*.log
+node_modules/
+
