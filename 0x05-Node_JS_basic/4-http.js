@@ -1,16 +1,16 @@
 const http = require('http');
 
-// Create an HTTP server
+const portNumber = 1245;
+const hostname = 'localhost';
+
 const app = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello Holberton School!\n');
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello Holberton School!');
 });
 
-// Make the server listen on port 1245
-app.listen(1245, () => {
-  console.log('Server listening on port 1245');
+app.listen(portNumber, hostname, () => {
+  console.log(`Server running at http://${hostname}:${portNumber}/`);
 });
 
-// Export the app
 module.exports = app;
-
