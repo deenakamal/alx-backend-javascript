@@ -1,5 +1,9 @@
 const express = require('express');
+
 const app = express();
+const PORT = 7865;
+
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('Welcome to the payment system');
@@ -30,6 +34,6 @@ app.post('/login', (req, res) => {
   res.send(`Welcome ${username}`);
 });
 
-app.listen(7865, () => {
+app.listen(PORT, () => {
   console.log('API available on localhost port 7865');
 });
